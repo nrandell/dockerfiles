@@ -1,1 +1,0 @@
-echo "Reading zookeeper env"
