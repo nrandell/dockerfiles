@@ -1,4 +1,4 @@
-FROM njrss/openjre-centos
+FROM nrandell/openjre-centos
 MAINTAINER Nick Randell <nick@nickrandell.com>
 
 RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | tar -xzf - -C /opt
