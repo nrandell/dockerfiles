@@ -6,9 +6,9 @@ docker run \
 	--name zookeeper-$ID \
 	--env ZK_SERVER_NUMBER=$ID \
 	--hostname zookeeper-$ID \
-	--env ZK_SERVERS="zookeeper-1 zookeeper-2 zookeeper-3" \
+	--env ZK_SERVERS="zookeeper-1,zookeeper-2,zookeeper-3" \
 	--publish 2181:2181 \
 	--publish 2888:2888 \
 	--publish 3888:3888 \
 	--volume /mnt/sda/data/zookeeper:/data \
-	njrss/zookeeper-centos
+	nrandell/zookeeper-centos

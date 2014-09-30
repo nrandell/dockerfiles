@@ -2,6 +2,7 @@
 
 ZOOKEEPER_DIR=/opt/zookeeper-3.4.6
 cp $ZOOKEEPER_DIR/conf/zoo.cfg.template $ZOOKEEPER_DIR/conf/zoo.cfg
+IFS=','
 ID=1
 for server in $ZK_SERVERS
 do

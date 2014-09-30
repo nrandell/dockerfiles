@@ -1,4 +1,4 @@
 #! /bin/sh
 
-docker build -t "njrss/zookeeper-centos" .
+docker build -t "nrandell/zookeeper-centos" .
 
