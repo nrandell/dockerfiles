@@ -1,0 +1,22 @@
+[Unit]
+Description=Nagios Remote Monitoring
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill nrpe
+ExecStartPre=-/usr/bin/docker rm nrpe
+ExecStartPre=/usr/bin/docker pull nrandell/nrpe
+ExecStart=/usr/bin/docker run \
+	--rm \
+	--name nrpe \
+	--privileged \
+	--publish 5666:5666 \
+	nrandell/nrpe
+
+ExecStop=/usr/bin/docker stop nrpe
+Restart=always
+
+[X-Fleet]
+Global=true
